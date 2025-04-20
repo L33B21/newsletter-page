@@ -1,0 +1,227 @@
+:root {
+  /* Colores primarios */
+  --color-primario-400: hsl(227, 67%, 48%);
+  --color-primario-500: hsl(227, 82%, 38%);
+
+  /* Colores neutros */
+  --color-neutro-100: hsl(0, 0%, 100%);
+  --color-neutro-200: hsl(210, 20%, 98%);
+  --color-neutro-300: hsl(220, 13%, 91%);
+  --color-neutro-400: hsl(221, 8%, 46%);
+  --color-neutro-800: hsl(219, 17%, 27%);
+  --color-neutro-900: hsl(0, 0%, 0%);
+
+  /* Tipografía */
+  --fuente-base: 'Poppins', sans-serif;
+
+  /* Tamaños de fuente */
+  --tam-48: 3rem;
+  --tam-32: 2rem;
+  --tam-20: 1.25rem;
+  --tam-18: 1.125rem;
+  --tam-16: 1rem;
+  --tam-14: 0.875rem;
+  --tam-12: 0.75rem;
+  --tam-10: 0.625rem;
+
+  --tam-base: var(--tam-16);
+
+  /* Pesos de fuente */
+  --peso-900: 900;
+  --peso-800: 800;
+  --peso-700: 700;
+  --peso-600: 600;
+  --peso-500: 500;
+  --peso-400: 400;
+  --peso-300: 300;
+  --peso-200: 200;
+  --peso-100: 100;
+
+  /* Espaciado */
+  --esp-6: 0.375rem;
+  --esp-8: 0.5rem;
+  --esp-12: 0.75rem;
+  --esp-16: 1rem;
+  --esp-20: 1.25rem;
+  --esp-24: 1.5rem;
+  --esp-60: 3.75rem;
+  --esp-80: 5rem;
+}
+
+/* Reset */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    animation-duration: 0.1s !important;
+    transition-duration: 0.1s !important;
+    scroll-behavior: smooth;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  color: var(--color-neutro-400);
+  font-family: var(--fuente-base);
+  font-size: var(--tam-base);
+  line-height: 1.6;
+}
+
+.visualmente-oculto {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+/* Envoltura */
+.envoltura {
+  max-width: 45rem;
+  margin-block-start: 8.5rem;
+  margin-inline: auto;
+  padding: 0 var(--esp-20);
+}
+
+/* Encabezado */
+.encabezado {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--esp-16);
+  margin-block-end: var(--esp-60);
+  text-align: center;
+}
+
+h1.titulo {
+  color: var(--color-neutro-900);
+  font-size: var(--tam-32);
+  font-weight: var(--peso-600);
+  line-height: 1.1;
+}
+
+p.subtitulo {
+  font-size: var(--tam-16);
+  color: var(--color-neutro-400);
+  max-width: 58ch;
+}
+
+/* Tarjeta y formulario */
+.tarjeta {
+  background-color: var(--color-neutro-100);
+  border-radius: var(--esp-16);
+  box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.03), 0px 8px 12px 0px rgba(0, 0, 0, 0.08);
+  padding: var(--esp-24);
+  max-width: 34.5rem;
+  margin-inline: auto;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+button {
+  border-radius: var(--esp-12);
+  font-size: var(--tam-16);
+  font-weight: var(--peso-500);
+  padding: var(--esp-20) var(--esp-16);
+  height: 59px;
+  margin-block-end: var(--esp-24);
+}
+
+input {
+  background-color: var(--color-neutro-200);
+  border: 1px solid var(--color-neutro-300);
+  color: var(--color-neutro-800);
+  text-align: center;
+}
+
+button {
+  background-color: var(--color-primario-400);
+  border: 1px solid var(--color-primario-400);
+  color: var(--color-neutro-100);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-primario-500);
+}
+
+.formulario p {
+  color: var(--color-neutro-800);
+  font-size: var(--tam-14);
+  text-align: center;
+}
+
+/* Media queries */
+@media screen and (min-width: 32.8125rem) {
+  .envoltura {
+    margin-block-start: 10.25rem;
+  }
+  h1.titulo {
+    font-size: var(--tam-48);
+  }
+
+  p.subtitulo {
+    font-size: var(--tam-20);
+  }
+}
